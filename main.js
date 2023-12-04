@@ -2,8 +2,8 @@
 let mainimg = document.querySelector('img');
 let images = ['slide images/image_1.jpg', 'slide images/image_2.jpg', 'slide images/image_3.jpg', 'slide images/image_4.jpg'];
 let num=0;
-// const auto=true;
-// const IntervalTime=3000;
+const auto=true;
+const IntervalTime=3000;
 let slideInterval
 
 function next() {
