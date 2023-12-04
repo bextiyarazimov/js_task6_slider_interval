@@ -1,32 +1,39 @@
+const next = document.querySelector(".next");
 
-let mainimg = document.querySelector('img');
-let images = ['slide images/image_1.jpg', 'slide images/image_2.jpg', 'slide images/image_3.jpg', 'slide images/image_4.jpg'];
-let num=0;
-const auto=true;
-const IntervalTime=3000;
-let slideInterval
+const prev = document.querySelector(".prev");
 
-function next() {
-    num++
-    if(num>=images.length){
-      num=0;
-      mainimg.src=images[num]
-    }else{
-        mainimg.src=images[num]
-    }
-    
-}
+const image = document.querySelectorAll("img");
+
+const images = document.querySelector(".images");
 
 
-function back (){
-    num--
-    if(num<0){
-        num=images.length-1
-        mainimg.src=images[num]
-    }else{
-        mainimg.src=images[num]
-    }
-}
-if(auto){
-    slideInterval=setInterval(next,IntervalTime)
+let currentImg =1 ;
+
+let timeout;
+
+next.addEventListener("click", () => {
+  currentImg++;
+  clearTimeout(timeout);
+  updateImg();
+});
+
+prev.addEventListener("click", () => {
+  currentImg--;
+  clearTimeout(timeout);
+  updateImg();
+});
+
+updateImg();
+
+function updateImg() {
+  if (currentImg > image.length) {
+    currentImg = 1;
+  } else if (currentImg < 1) {
+    currentImg = image.length;
+  }
+  images.style.transform = `translateX(-${(currentImg - 1) * 500}px)`;
+  timeout = setTimeout(() => {
+    currentImg++;
+    updateImg();
+  }, 3000);
 }

@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    
-<div class="main">
-    <div class="slider">
-<img src="slide images/image_1.jpg" alt="img_1" width="100%">
-          
-    <div class="buttons">
-       <i class="fas fa-angle-double-left" onclick="next()"></i></button>
-        <i class="fas fa-angle-double-right" onclick="back()"></i></button>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Document</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="images">
+        <img src="slide images/image_1.jpg" alt="image" />
+        <img src="slide images/image_2.jpg" alt="image" />
+        <img src="slide images/image_3.jpg" alt="image" />
+        <img src="slide images/image_4.jpg" alt="image" />
+        <img src="slide images/image_5.jpg" alt="image" />
+      </div>
+      <i class="fas fa-angle-double-left btn prev"></i>
+      <i class="fas fa-angle-double-right btn next"></i>
     </div>
-</div>
-
-
-   
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
